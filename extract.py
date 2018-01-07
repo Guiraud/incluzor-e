@@ -1,0 +1,34 @@
+# -*-coding:utf-8 -*
+import requests
+from lxml import html
+from lxml import etree
+from StringIO import StringIO
+from csv import DictWriter
+
+#f= StringIO('<a href="http://www.lefigaro.fr/flash-actu/2018/01/07/97001-20180107FILWWW00094-val-d-oise-un-controle-de-police-degenere.php">')
+page = requests.get('http://www.lefigaro.fr/flash-actu/2018/01/07/97001-20180107FILWWW00094-val-d-oise-un-controle-de-police-degenere.php')
+f = html.fromstring(page.content)
+#doc = etree.parse(f)
+
+data=[]
+# Get all links with data-spm-anchor-id="0.0.0.0" 
+r = f.xpath('/html/body/div[3]/div/div[1]/div[1]/article/div[2]/p/text()')
+
+# Iterate thru each element containing an <a></a> tag element
+for elem in r:
+    text = u''.join(elem).encode('utf-8').strip().replace('\xc2\xa0','')
+    print str(len(text))+"===>"+text
+
+    data.append({
+        #'link': link,
+        #'title': title,
+        'text': text
+    })
+
+with open('file.csv', 'w') as csvfile:
+    #fieldnames=['link', 'title', 'text']
+    fieldnames=['text']
+    writer = DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for row in data:
+        writer.writerow(row)
