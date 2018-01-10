@@ -1,12 +1,17 @@
 # -*-coding:utf-8 -*
+import sys
 import requests
 from lxml import html
 from lxml import etree
 from StringIO import StringIO
 from csv import DictWriter
 
+lien = sys.argv[1]
+
 #f= StringIO('<a href="http://www.lefigaro.fr/flash-actu/2018/01/07/97001-20180107FILWWW00094-val-d-oise-un-controle-de-police-degenere.php">')
-page = requests.get('http://www.lefigaro.fr/flash-actu/2018/01/07/97001-20180107FILWWW00094-val-d-oise-un-controle-de-police-degenere.php')
+#page = requests.get('http://www.lefigaro.fr/flash-actu/2018/01/07/97001-20180107FILWWW00094-val-d-oise-un-controle-de-police-degenere.php')
+page = requests.get(lien)
+
 f = html.fromstring(page.content)
 #doc = etree.parse(f)
 
@@ -22,12 +27,13 @@ for elem in r:
     data.append({
         #'link': link,
         #'title': title,
-        'text': text
+        #'text': text
+	'': text
     })
 
 with open('file.csv', 'w') as csvfile:
     #fieldnames=['link', 'title', 'text']
-    fieldnames=['text']
+    fieldnames=['']
     writer = DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     for row in data:

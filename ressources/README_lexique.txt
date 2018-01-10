@@ -1,3 +1,29 @@
+https://www.dicollecte.org/documentation.php?prj=fr
+adv	Adverbe.
+loc.adv	Locution adverbiale.
+loc.adj	Locution adjectivale.
+loc.verb	Locution verbale.
+interj	Interjection.
+mg	Mot grammatical.
+det	Déterminant.
+prep	Préposition.
+nb	Nombre.
+cj	Conjonction.
+pro	Pronom.
+
+sg	singulier.
+pl	pluriel.
+inv	invariable en nombre, c’est-à-dire singulier ou pluriel.
+mas	masculin.
+fem	féminin.
+epi	épicène, c’est-à-dire masculin ou féminin.
+
+nom	Nom commun (ou un nom propre s’utilisant avec déterminant&: la France, l’Everest, les États-Unis, etc.).
+adj	Adjectif.
+	
+prn	Prénom.
+patr	Patronyme.
+npr	Indique un nom propre qui ne nécessite pas de déterminant : Berlin, Hawaï, Linux, etc.
 _______________________________________________________________________________
 
    LEXIQUE FRANÇAIS, LISTE DES FORMES FLÉCHIES

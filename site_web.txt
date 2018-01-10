@@ -1,0 +1,1 @@
+lefigaro.fr;flash-actu;/html/body/div[3]/div/div[1]/div[1]/article/div[2]/p/text()
