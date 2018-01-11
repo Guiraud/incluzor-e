@@ -1,0 +1,17 @@
+Projets féminisons
+
+* Mettre en corespondance chaque mot et ses caractéristiques dico
+* Lister les sites possible et leur séquence xpath
+* Afficher pour chaque mots des suggestions si elles sont disponibles.
+* Récuperer la base des mots féminisés
+* Faire un fichier "à plat" des mots et de leur correspondance féminisée
+* Mettre à jour le fichier dicollecte avec une version féminisé
+* Présentation du projet
+* - L'objectif final
+* - Lister les outils possibles
+* - Plugin pour transformer in-situ la page.
+* - scriplet pour transformer le lien
+* - 
+* Explorer la fasabilité en javascript
+
+
