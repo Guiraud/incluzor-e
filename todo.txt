@@ -3,6 +3,7 @@ Projets féminisons
 * Mettre en corespondance chaque mot et ses caractéristiques dico
 * Lister les sites possible et leur séquence xpath
 * Afficher pour chaque mots des suggestions si elles sont disponibles.
+* traitement des mots à apostrophe (d', l', qu',...)
 * Récuperer la base des mots féminisés
 * Faire un fichier "à plat" des mots et de leur correspondance féminisée
 * Mettre à jour le fichier dicollecte avec une version féminisé
