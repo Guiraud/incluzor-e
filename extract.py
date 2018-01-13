@@ -1,10 +1,12 @@
 # -*-coding:utf-8 -*
 import sys
+import nltk
 import requests
 from lxml import html
 from lxml import etree
 from StringIO import StringIO
 from csv import DictWriter
+from nltk.tokenize import word_tokenize
 
 lien = sys.argv[1]
 
@@ -23,12 +25,14 @@ r = f.xpath('/html/body/div[3]/div/div[1]/div[1]/article/div[2]/p/text()')
 for elem in r:
     text = u''.join(elem).encode('utf-8').strip().replace('\xc2\xa0','')
     print str(len(text))+"===>"+text
-
+    for i in r:
+	text_inclu=word_tokenize(i, language='french')
+	print(text_inclu)
     data.append({
         #'link': link,
         #'title': title,
         #'text': text
-	'': text
+	'': text_inclu
     })
 
 with open('file.csv', 'w') as csvfile:

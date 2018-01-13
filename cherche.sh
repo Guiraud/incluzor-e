@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(awk -F, '$1 ~ /^'"$1"'$/' ressources/l.txt)
+echo $(awk -F, '$2 ~ /^'"$1"'$/' ressources/l.txt)
