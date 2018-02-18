@@ -31,23 +31,26 @@
 		<div class="section img-responsive" id="convertisseur">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6">
+					<div class="col-md-6">
 						<h4>Texte à réécrire :</h4>
 						<p>Collez ici le texte (ou l'adresse URL de la page web) que vous souhaitez réécrire de façon inclusive.</p>
 					</div>
-					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6">
+					<div class="col-md-6 col-md-offset-2">
 						<input type="button" value="Réécrire" id="mybtn">
 						</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6">
-						<textarea type="text" 
-									cols="40" 
+					<div class="col-md-6">
+						<textarea 	class="origine" 
+									type="text" 
+									id="pass_data" 
+									value="" 
+									onblur="passData();" 
+									cols="60" 
 									rows="15">
-						Tous les hommes naissent libres et égaux en dignité et en droits. Ils sont doués de raison et de conscience et doivent agir les uns envers les autres dans un esprit de fraternité 
-					</textarea>
+						La France est une République indivisible, laïque, démocratique et sociale. Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion.</textarea>
 					</div>
-					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6">
+					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-2">
 						<div class="dropdown" id="onglet">
@@ -65,19 +68,19 @@
 						</div>
 						</div>
 						<div class="col-md-2">
-							<input type="button" value="Lecture silencieuse" class="btn btn-default" id="onglet">
+							<input type="button" value="Lecture silencieuse" id="onglet">
 
 						</div>
 						<div class="col-md-2">
-							<input type="button" value="NuitDeboutiste" class="btn btn-default" id="onglet">
+							<input type="button" value="NuitDeboutiste" id="onglet">
 
 						</div>
 						<div class="col-md-2">
-							<input type="button" value="Débinarisante" class="btn btn-default" id="onglet">
+							<input type="button" value="Débinarisante"id="onglet">
 
 						</div>
 
-						<textarea class="newtext" type="text" cols="40" rows="14">Tous les hommes et toutes les femmes naissent libres et égales en dignité et en droits. Ils et elles sont doué·es de raison et de conscience et doivent agir les un·es envers les autres dans un esprit de fraternité et de sororité [fratersororité].</textarea>
+						<textarea class="newtext" type="text" cols="50" rows="14"></textarea>
 						</div>
 					</div>
 				</div>
@@ -96,20 +99,20 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-md-3">
 				<h1>1</h1>
 				<p id="liste"><strong>Double flexion :</strong> les noms et adjectifs sont doublés du genre manquant.</p>
 				
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-md-3">
 				<h1>2</h1>
 				<p id="liste"><strong>Lecture silencieuse :</strong> cette orthographe permet d'oraliser mentalement.</p>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-md-3">
 				<h1>3</h1>
 				<p id="liste"><strong>NuitDeboutiste :</strong> pour visibiliter les femmes et les hommes de la même manière.</p>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-md-3">
 				<h1>4</h1>
 				<p id="liste"><strong>Débinarisante :</strong> pour atténuer les marques de genre, vers davantage de neutralité.</p>
 			</div>
@@ -124,7 +127,7 @@
 		<footer class="section" id="footer"> 
 			<div class="container"> 
 				<div class="row"> 
-					<div class="col-xs-12 col-md-6 "> 
+					<div class="col-md-6 "> 
 						<h2> Pour aller plus loin </h2> 
 						<p> Ce convertisseur s'appuie sur les travaux linguistiques suivants, que vous pouvez utiliser pour rédiger vos textes :</p>
 						<ul>
@@ -140,10 +143,10 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-6" id="copy">
+					<div class="col-md-6" id="copy">
 						<p>Incluzor a été réalisé collectivement lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a> 2017.</p>
 					</div>
-					<div class="col-xs-12 col-sm-12 col-md-6" id="icon">
+					<div class="col-md-6" id="icon">
 						<a href="#"><i class="far fa-envelope fa-3x"></i></a>
 						<a href="#"><i class="fab fa-github fa-3x"></i></a>
 						<a href="#"><i class="fab fa-twitter fa-3x"></i></a>
