@@ -93,7 +93,7 @@ class Parser():
                 out_adj += row.get("inc_plur").lower().strip()
                 return out_adj
 
-        return out_adj
+        return adj
 
     def replace_accords(self, tree, inclusive, plural):
         if tree.label() == "NP-BiSing":
