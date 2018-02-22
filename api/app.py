@@ -1,32 +1,26 @@
-from io import StringIO
-from nltk.tree import *
-from pycorenlp import StanfordCoreNLP
-import nltk
-import requests
-import pandas as pd
-import io
-from nltk.tree import ParentedTree
-
-# app = Flask(__name__)
 from flask_api import FlaskAPI
-from flask import request, url_for
-# from flask_api import FlaskAPI, status, exceptions
+from flask import request
 from flasgger import Swagger
-from parser import Parser
+from flask_cors import CORS
 
+from parser import Parser
+from pycorenlp import StanfordCoreNLP
+from io import StringIO
+from nltk.tree import Tree
+
+# Setup Flask
 app = FlaskAPI(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
-swagger = Swagger(app)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-
+# Setup Parser
 parser = Parser()
 nlp = StanfordCoreNLP('http://localhost:9000')
 
-# @app.route("/parse_sentence/", methods=['GET', 'POST'])
 @app.route("/", methods=['GET'])
 def parse_sentence():
     if request.method == 'GET':
-        # text = str(request.data.get('input', ''))
         text = request.args.get('input')
 
         parse_output = nlp.annotate(text, properties={
@@ -55,5 +49,10 @@ def parse_sentence():
 
         all_output = all_output.replace(' .', '. ')
 
-        return {"converted_text": all_output, "parsed_sentences":parsed_output}
+        return {"converted_text": all_output, "parsed_sentences": parsed_output}
     return {"Status": "Fail"}
+
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host='0.0.0.0',port=5005)
