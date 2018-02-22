@@ -1,0 +1,5 @@
+Flask-API
+flasgger
+pycorenlp
+nltk
+pandas
