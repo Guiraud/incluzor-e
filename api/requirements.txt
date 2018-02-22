@@ -3,3 +3,4 @@ flasgger
 pycorenlp
 nltk
 pandas
+flask-cors
