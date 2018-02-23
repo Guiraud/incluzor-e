@@ -35,15 +35,26 @@
 
   <body>
 	<header role="banner">
-		<div class="container-fluid" id="photo">
-			<h1 class="invisible">IncluZor·e</h1>
+		<div class="header-sticky">
+			<div class="header-inner">
+				<div class="container">
+					<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
+					<p id="slogan">Convertisseuse auto de textes en langage inclusif</p>
+				</div>
+			</div>
 		</div>
 	</header>
 
 	<main role="main">
-		<div class="section img-responsive" id="convertisseur">
+		<div class="section" id="convertisseur">
 			<div class="container">
 				<h2>Convertir</h2>
+				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive, en vous laissant le choix, pour vous aider à&nbsp;trouver les formulations qui évitent les discriminations dans le langage.</p>
+
+				<div class="alert alert-warning" role="alert">
+					<p>Attention, ce formulaire est en cours de développement&nbsp;: selon les moments, il peut être opérationnel ou totalement hors service. Nous sommes en train de serrer les derniers boulons… Merci de votre compréhension.</p>
+				</div>
+
 				<form>
 					<div class="row">
 						<div class="col-md-6">
@@ -57,12 +68,9 @@
 						</div>
 						<div class="col-md-6">
 							<div class="row">
-								<div class="col-md-2">
+								<div id="buttons">
 									<div class="dropdown">
-										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1 onglet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-											Double flexion
-											<span class="caret"></span>
-										</button>
+										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1 onglet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Double flexion <span class="caret"></span></button>
 										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 											<li><a href="#">Double flexion</a></li>
 											<li><a href="#">Lecture silencieuse</a></li>
@@ -78,68 +86,58 @@
 						</div>
 					</div>
 				</form>
+
 			</div>
 		</div>
 
-		<div class="container-fluid" id="a-propos">
+		<div class="container-fluid clearfix" id="more">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-						<h2 class="text-center">À&nbsp;vous de choisir&nbsp;!</h2>
-						<p>Il existe plusieurs manières de rédiger de façon inclusive. Nous vous en proposons quatre ici, à adapter à votre guise :</p>
+					<div class="col-md-6">
+							<h3>À&nbsp;vous de choisir&nbsp;!</h3>
+							<p>Il existe plusieurs manières de rédiger de façon inclusive, à&nbsp;adapter à&nbsp;votre guise&nbsp:</p>
+						<ul>
+							<li><strong>Double flexion&nbsp;:</strong> les noms et adjectifs sont doublés du genre manquant.</li>
+							<li><strong>Lecture silencieuse&nbsp;:</strong> cette orthographe permet d'oraliser mentalement.</li>
+							<li><strong>NuitDeboutiste&nbsp;:</strong> pour visibiliter les femmes et les hommes de la même manière.</li>
+							<li><strong>Débinarisante&nbsp;:</strong> pour atténuer les marques de genre, vers davantage de neutralité.</li>
+							<li><strong>Neutre&nbsp;:</strong> Un genre commun proposé par Alpheratz.</li>
+						</ul>
 					</div>
-				</div>
-				<div class="row">
-					<ul>
-						<li class="col-md-3">
-							<span class="big">1</span>
-							<span class="p"><strong>Double flexion&nbsp;:</strong> les noms et adjectifs sont doublés du genre manquant.</span>
-						</li>
-						<li class="col-md-3">
-							<span class="big">2</span>
-							<span class="p"><strong>Lecture silencieuse&nbsp;:</strong> cette orthographe permet d'oraliser mentalement.</span>
-						</li>
-						<li class="col-md-3">
-							<span class="big">3</span>
-							<span class="p"><strong>NuitDeboutiste&nbsp;:</strong> pour visibiliter les femmes et les hommes de la même manière.</span>
-						</li>
-						<li class="col-md-3">
-							<span class="big">4</span>
-							<span class="p"><strong>Débinarisante&nbsp;:</strong> pour atténuer les marques de genre, vers davantage de neutralité.</span>
-						</li>
-					</ul>
+					<div class="col-md-6">
+						<h3> Pour aller plus loin </h3> 
+						<p> Ce convertisseur s'appuie sur les travaux linguistiques suivants, que vous pouvez utiliser pour rédiger vos textes :</p>
+						<ul>
+							<li><a href="http://www.ecriture-inclusive.fr/">Manuel d'écriture inclusive</a></li>
+							<li><a href="https://www.syllepse.net/lng_FR_srub_62_iprod_716-manuel-de-grammaire-non-sexiste-et-inclusive.html">Manuel de grammaire non sexiste et inclusive</a></li>
+							<li>etc.</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</main>
 
-	<div class="section" id="footer"> 
-		<div class="container"> 
-			<div class="row"> 
-				<div class="col-md-4">
+	<div class="section" id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 small quiet">
 					<h2>À propos</h2>
-					<p>IncluZor·e réécrit automatiquement tout texte français de façon inclusive, en vous laissant le choix, pour vous aider à trouver les formulations qui évitent les discriminations dans le langage.</p>
-				</div>
-				<div class="col-md-2"><img id="img-logo" src="img/logo.png"></div>
-				<div class="col-md-6 "> 
-					<h2> Pour aller plus loin </h2> 
-					<p> Ce convertisseur s'appuie sur les travaux linguistiques suivants, que vous pouvez utiliser pour rédiger vos textes :</p>
-					<ul>
-						<li><a href="http://www.ecriture-inclusive.fr/">Manuel d'écriture inclusive</a></li>
-						<li>etc.</li>
-					</ul>
+					<p>IncluZor·e s’inscrit dans le contexte sociétal actuel, qui semble enfin capable d’accorder les droits d’expression et de représentation aux femmes et aux personnes ne se reconnaissant pas dans la binarité des genres féminin et masculin. Ce&nbsp;site et cet outil visent à fournir à toute personne souhaitant convertir un texte en français inclusif les moyens de le faire de la façon la plus pertinente et adéquate pour elle&nbsp;; La&nbsp;convertisseuse Incluzor·e s’adresse à toutes celles et ceux qui souhaitent nommer les femmes à part égale dans leurs discours et leurs écrits. Elle&nbsp;s’adresse aussi à&nbsp;toustes celleux qui veulent s’exprimer dans une langue non strictement binaire, c’est-à-dire dans une langue qui reflète des positions genrées plus complexes et/ou plus fluides. La&nbsp;convertisseuse met à la disposition de toustes plusieurs procédés d’inclusion – des doublets féminin masculin (lectrices et lecteurs) aux néologismes (lecteurices), dont des neutres (lectaires)&nbsp;; Le&nbsp;projet IncluZor·e dispose d’une pertinence linguistique&nbsp;: en se fondant sur les usages actuels et les travaux de linguistes féministes, queer, non binaires ou agenres, sur les travaux de recherche syntaxique de&nbsp;l’<abbr title="Institut national de recherche en informatique et en automatique">INRIA</abbr>, il propose des lexiques et des points de grammaire inclusive (tel cet accord en genre et nombre avec le terme le plus proche, le fameux accord de proximité)&nbsp;; Il&nbsp;est doté d’une pertinence technique, reposant sur des analyseurs et des algorithmes&nbsp;; Il&nbsp;est le fruit d’un travail collectif, rassemblant des amoureureuses de la langue française et de l’expression sans discrimination&nbsp;;</p>
+					<p>L’équipe IncluZor·e, composée d’informatic·ien·cienne·s, de Web designers, de linguistes, d’une ancienne lexicographe, de rédactrice·teurs, de journalistes et d’étudiantEs en études de genre est bénévole&nbsp;;</p>
+					<p>Rejoignez le mouvement IncluZor·e !</p>
 				</div>
 			</div>
 			<div class="row">
-				<footer role="contentinfo" class="col-md-6" id="copy">
-					<br><small>&copy; IncluZor·e a été réalisé collectivement lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a> 2018.</small>
+				<footer role="contentinfo" class="col-md-8" id="copy">
+					<small>&copy; IncluZor·e a été réalisé collectivement lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a> 2018.</small>
 				</footer>
-				<div class="col-md-6" id="icon">
-					<a href="mailto:contact@incluzor.fr"><i class="far fa-envelope fa-3x"></i></a>
-					<a href="https://github.com/Guiraud/incluzor-e"><i class="fab fa-github-alt fa-3x"></i></a>
-					<a href="https://twitter.com/incluzor"><i class="fab fa-twitter fa-3x"></i></a>
-					<a href="http://wiki.incluzor.fr/"><i class="fab fa-wikipedia-w fa-3x"></i></a>
-					<a href="https://www.facebook.com/incluzor/"><i class="fab fa-facebook-f fa-3x"></i></a>
+				<div class="col-md-4" id="contact">
+					<a href="https://github.com/Guiraud/incluzor-e"><i class="fab fa-github-alt fa-2x"></i></a>
+					<a href="http://wiki.incluzor.fr/"><i class="fab fa-wikipedia-w fa-2x"></i></a>
+					<a href="https://twitter.com/incluzor"><i class="fab fa-twitter fa-2x"></i></a>
+					<a href="https://www.facebook.com/incluzor/"><i class="fab fa-facebook-f fa-2x"></i></a>
+					<a href="mailto:contact@incluzor.fr"><i class="far fa-envelope fa-2x"></i></a>
 				</div>
 			</div>
 		</div>
