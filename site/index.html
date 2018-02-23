@@ -34,13 +34,13 @@
   </head>
 
   <body>
-	<header>
+	<header role="banner">
 		<div class="container-fluid" id="photo">
 			<h1 class="invisible">IncluZor·e</h1>
 		</div>
 	</header>
 
-	<main>
+	<main role="main">
 		<div class="section img-responsive" id="convertisseur">
 			<div class="container">
 				<h2>Convertir</h2>
@@ -113,7 +113,7 @@
 		</div>
 	</main>
 
-	<footer class="section" id="footer"> 
+	<div class="section" id="footer"> 
 		<div class="container"> 
 			<div class="row"> 
 				<div class="col-md-4">
@@ -131,9 +131,9 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6" id="copy">
-					<br><small>IncluZor·e a été réalisé collectivement lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a> 2017.</small>
-				</div>
+				<footer role="contentinfo" class="col-md-6" id="copy">
+					<br><small>&copy; IncluZor·e a été réalisé collectivement lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a> 2017.</small>
+				</footer>
 				<div class="col-md-6" id="icon">
 					<a href="mailto:contact@incluzor.fr"><i class="far fa-envelope fa-3x"></i></a>
 					<a href="https://github.com/Guiraud/incluzor-e"><i class="fab fa-github-alt fa-3x"></i></a>
@@ -144,7 +144,7 @@
 			</div>
 		</div>
 		<img style="position: fixed; top: 0; right: 0; border: 0; z-index: 999" src="img/beta.png" alt="version beta">
-	</footer>
+	</div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
