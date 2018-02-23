@@ -54,9 +54,11 @@ h2 {
 }
 #footer{
 	background-color: #007a76;
-	color: #ffffff;
 	padding-bottom: 20px;
 }
+#footer,
+#footer a { color: #ffffff; }
+#footer a { text-decoration: underline; }
 
 #img-logo{
 	width: 150px;
