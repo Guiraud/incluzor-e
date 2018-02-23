@@ -1,4 +1,4 @@
-# Incluzore·e
+# IncluZor·e
 
 Vous trouverz ici le projet de la convertisseuse en français inclusif IncluZor·e.
 
