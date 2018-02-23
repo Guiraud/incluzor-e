@@ -43,60 +43,58 @@
 	<main>
 		<div class="section img-responsive" id="convertisseur">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<label for="pass_data">Texte à&nbsp;réécrire&nbsp;:
-							<p class="small">Collez ici le texte (ou l'adresse URL de la page web) que vous souhaitez réécrire de façon inclusive.</p>
-						</label>
-					</div>
-					<div class="col-md-6 col-md-offset-2">
-						<input type="button" value="Réécrire" id="mybtn">
+				<form>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="pass_data">Texte à&nbsp;réécrire&nbsp;:
+								<p class="small">Collez ici le texte (ou l'adresse URL de la page web) que vous souhaitez réécrire de façon inclusive.</p>
+							</label>
 						</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<textarea 	class="origine" 
-									type="text" 
-									id="pass_data" 
-									value="" 
-									onblur="passData();" 
-									cols="60" 
-									rows="15">La France est une République indivisible, laïque, démocratique et sociale. Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion.</textarea>
-					</div>
-					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-2">
-						<div class="dropdown" id="onglet">
-							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1 onglet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								Double flexion
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-								<li><a href="#" title="Lien 1">Double flexion</a></li>
-								<li><a href="#" title="Lien 2">Lecture silencieuse</a></li>
-								<li><a href="#" title="Lien 3">NuitDeboutiste</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#" title="Lien 4">Débinarisante</a></li>
-							</ul>
-						</div>
-						</div>
-						<div class="col-md-2">
-							<input type="button" value="Lecture silencieuse" id="onglet">
-
-						</div>
-						<div class="col-md-2">
-							<input type="button" value="NuitDeboutiste" id="onglet">
-
-						</div>
-						<div class="col-md-2">
-							<input type="button" value="Débinarisante" id="onglet">
-
-						</div>
-
-						<textarea class="newtext" type="text" cols="50" rows="14"></textarea>
+						<div class="col-md-6 col-md-offset-2">
+							<input type="button" value="Réécrire" id="mybtn">
 						</div>
 					</div>
-				</div>
+					<div class="row">
+						<div class="col-md-6">
+							<textarea 	class="origine" 
+										type="text" 
+										id="pass_data" 
+										value="" 
+										onblur="passData();" 
+										cols="60" 
+										rows="15">La France est une République indivisible, laïque, démocratique et sociale. Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion.</textarea>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-2">
+									<div class="dropdown" id="onglet">
+										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1 onglet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											Double flexion
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+											<li><a href="#" title="Lien 1">Double flexion</a></li>
+											<li><a href="#" title="Lien 2">Lecture silencieuse</a></li>
+											<li><a href="#" title="Lien 3">NuitDeboutiste</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#" title="Lien 4">Débinarisante</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<input type="button" value="Lecture silencieuse" id="onglet">
+								</div>
+								<div class="col-md-2">
+									<input type="button" value="NuitDeboutiste" id="onglet">
+								</div>
+								<div class="col-md-2">
+									<input type="button" value="Débinarisante" id="onglet">
+								</div>
+								<textarea class="newtext" type="text" cols="50" rows="14"></textarea>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 
