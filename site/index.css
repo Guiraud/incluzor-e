@@ -21,6 +21,7 @@ body{
 	padding-bottom: 50px;
 	opacity: 0.9em;
 }
+#convertisseur label p { margin: 0; }
 .origine,
 .newtext {
 	clear: both;
