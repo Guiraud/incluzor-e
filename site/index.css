@@ -25,8 +25,16 @@ body{
 	padding-bottom: 50px;
 	opacity: 0.9em;
 }
+.origine,
+.newtext {
+	clear: both;
+	display: block;
+	width: 100%;
+	padding: 2px;
+	min-height: 12em;
+}
 .newtext{
-	background-color: transparent;
+	background-color: #F5F5F5;
 }
 
 #onglet{
