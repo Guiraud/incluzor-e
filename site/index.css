@@ -35,16 +35,18 @@ body{
 #a-propos{
 	background-color: #FDD835;
 }
-#a-propos span{
+#a-propos ul,
+#a-propos li { display: block; padding: 0; list-style: none; }
+#a-propos li { float: left; }
+#a-propos span { display: block; }
+#a-propos span.big {
 	position: relative;
 	font-size: 150px;
 	opacity: 0.6;
 	color: #FFC107;
+	line-height: 1;
 }
-#a-propos p {
-	position: relative;
-	margin-top: -70px;
-}
+#a-propos span.p { margin-top: -20%; }
 
 h2 {
 	margin: 50px;
