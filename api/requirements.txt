@@ -1,0 +1,6 @@
+Flask-API
+flasgger
+pycorenlp
+nltk
+pandas
+flask-cors
