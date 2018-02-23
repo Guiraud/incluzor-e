@@ -35,7 +35,7 @@ body{
 #a-propos{
 	background-color: #FDD835;
 }
-#a-propos h1{
+#a-propos span{
 	position: relative;
 	font-size: 150px;
 	opacity: 0.6;
