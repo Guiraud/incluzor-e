@@ -10,10 +10,6 @@
 body{
     font-family: 'Raleway', sans-serif;
 }
-#mybtn{
-	background-color: #FDD835;
-	border-radius: 25px;
-}
 
 #photo{
 	background: url("img/banner.png");
