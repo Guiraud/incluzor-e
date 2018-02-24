@@ -33,7 +33,7 @@ h3 { font-size: 1.25rem; font-weight: bold; }
 .quiet:hover { opacity: 1; }
 
 .offscreen{position:absolute;left:-999em;height:1%}
-.none { display: none; }
+.none { display: none !important; }
 
 
 
@@ -93,7 +93,7 @@ main { margin-bottom: 30px }
 /* ---------------------------------------------------------------------- */
 #footer { padding: 20px 0; border-top: 1px solid #CCC; }
 #footer * { vertical-align: middle; }
-#footer h2 { font-size: 100%; font-weight: bold; }
+#about h2 { font-size: 100%; font-weight: bold; }
 #footer h2,
 #footer p { margin: 0; }
 #contact { text-align: right; }
