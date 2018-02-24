@@ -31,7 +31,9 @@ h3 { font-size: 1.25rem; font-weight: bold; }
 .todo { opacity: .5; }
 .quiet { opacity: .8; }
 .quiet:hover { opacity: 1; }
-.invisible { display: none; }
+
+.offscreen{position:absolute;left:-999em;height:1%}
+.none { display: none; }
 
 
 
@@ -60,21 +62,18 @@ header p { padding-bottom: 12px; }
 /* ---------------------------------------------------------------------- */
 main { margin-bottom: 30px }
 
-#convertisseuse{
-	/*background-color: #fffDE7;*/
-}
+#convertisseuse { /*background-color: #fffDE7;*/ }
 #convertisseuse label p { margin: 0; }
-#convertisseuse .lead { margin-bottom: 40px; } 
+#convertisseuse .lead { margin-bottom: 40px; }
+
 .origine,
 .newtext {
-	clear: both;
-	display: block;
 	width: 100%;
-	padding: 2px;
 	min-height: 12em;
+	padding: 2px;
 }
 .newtext{
-	background-color: #F5F5F5;
+	background-color: #EEE;
 }
 
 #more{ padding-top: 40px; }
