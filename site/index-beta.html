@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>IncluZor·e : récriture inclusive des textes en ligne</title>
+    <meta name="description" content="IncluZor·e réécrit automatiquement tout texte français de façon inclusive pour vous aider à trouver les formulations qui évitent les discriminations dans le langage.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.2/css/all.css">
+	<link rel="stylesheet" href="custom.css" type="text/css">
+
+	<link rel="icon" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+	<header role="banner">
+		<div class="header-sticky">
+			<div class="header-inner">
+				<div class="container">
+					<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
+					<p id="slogan">Convertisseuse de textes en langage inclusif</p>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main role="main">
+		<div class="section" id="convertisseuse">
+			<div class="container">
+				<h2>Convertir</h2>
+				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive, pour vous aider à&nbsp;trouver les&nbsp;formulations qui&nbsp;évitent les&nbsp;discriminations dans le&nbsp;langage.</p>
+
+				<div class="alert alert-warning" role="alert">
+					<p>Attention, ce formulaire est en cours de développement&nbsp;: selon les moments, il peut être opérationnel ou totalement hors service. Nous sommes en train de serrer les derniers boulons… Merci de votre compréhension. Vos retours sont bienvenus&nbsp;!</p>
+				</div>
+
+				<form>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="pass_data">Saisir ici le texte que vous souhaitez réécrire de façon inclusive&nbsp;:</label>
+							<textarea 	class="origine" 
+										type="text" 
+										id="pass_data" 
+										value="" 
+										onblur="passData();"
+										placeholder="La France est une République indivisible, laïque, démocratique et sociale. Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion."></textarea>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="btn-group">
+									<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1 onglet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Double flexion <span class="caret"></span></button>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+											<li><a href="#">Double flexion</a></li>
+											<li><a href="#">Lecture silencieuse</a></li>
+											<li><a href="#">NuitDeboutiste</a></li>
+											<li><a href="#">Débinarisante</a></li>
+											<li><a href="#">Neutre</a></li>
+										</ul>
+									</div>
+									<button class="btn btn-success">Réécrire</button>
+								</div>
+								<div class="newtext" type="text" cols="50" rows="14">…</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+		<div class="container-fluid clearfix" id="more">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+							<h3>À&nbsp;vous de choisir&nbsp;!</h3>
+							<p>Il existe plusieurs manières de rédiger de façon inclusive, à&nbsp;adapter à&nbsp;votre guise&nbsp:</p>
+						<ul>
+							<li><strong>Double flexion&nbsp;:</strong> les noms et adjectifs sont doublés du genre manquant.</li>
+							<li><strong>Lecture silencieuse&nbsp;:</strong> cette orthographe permet d'oraliser mentalement.</li>
+							<li><strong>NuitDeboutiste&nbsp;:</strong> pour visibiliter les femmes et les hommes de la même manière.</li>
+							<li><strong>Débinarisante&nbsp;:</strong> pour atténuer les marques de genre, vers davantage de neutralité.</li>
+							<li><strong>Neutre&nbsp;:</strong> Un genre commun proposé par Alpheratz.</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h3> Pour aller plus loin </h3> 
+						<p> Cette convertisseuse s'appuie sur les travaux linguistiques suivants, que vous pouvez utiliser pour rédiger vos textes :</p>
+						<ul>
+							<li><a href="http://www.ecriture-inclusive.fr/">Manuel d'écriture inclusive</a></li>
+							<li><a href="https://www.syllepse.net/lng_FR_srub_62_iprod_716-manuel-de-grammaire-non-sexiste-et-inclusive.html">Manuel de grammaire non sexiste et inclusive</a></li>
+							<li>etc.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<div class="section" id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 small quiet">
+					<h2>À propos</h2>
+					<p>IncluZor·e s’inscrit dans le contexte sociétal actuel, qui semble enfin capable d’accorder les droits d’expression et de représentation aux femmes et aux personnes ne se reconnaissant pas dans la binarité des genres féminin et masculin.</p>
+					<p>Ce&nbsp;site et cet outil visent à fournir à toute personne souhaitant convertir un texte en français inclusif les moyens de le faire de la façon la plus pertinente et adéquate pour elle. La&nbsp;convertisseuse IncluZor·e s’adresse à toutes celles et ceux qui souhaitent nommer les femmes à part égale dans leurs discours et leurs écrits. Elle&nbsp;s’adresse aussi à&nbsp;toustes celleux qui veulent s’exprimer dans une langue non strictement binaire, c’est-à-dire dans une langue qui reflète des positions genrées plus complexes et/ou plus fluides. La&nbsp;convertisseuse met à la disposition de toustes plusieurs procédés d’inclusion — des doublets féminin masculin (lectrices et lecteurs) aux néologismes (lecteurices), dont des neutres (lectaires).</p>
+					<p>Le&nbsp;projet IncluZor·e dispose d’une pertinence linguistique&nbsp;: en se fondant sur les usages actuels et les travaux de linguistes féministes, queer, non binaires ou agenres, sur les travaux de recherche syntaxique de&nbsp;l’<abbr title="Institut national de recherche en informatique et en automatique">INRIA</abbr>, il propose des lexiques et des points de grammaire inclusive (tel cet accord en genre et nombre avec le terme le plus proche, le fameux accord de proximité). Il&nbsp;est doté d’une pertinence technique, reposant sur des analyseurs et des algorithmes. Il&nbsp;est le fruit d’un travail collectif, rassemblant des amoureureuses de la langue française et de l’expression sans discrimination. L’équipe IncluZor·e, composée d’informatic·ien·cienne·s, de Web designers, de linguistes, d’une ancienne lexicographe, de rédactrice·teurs, de journalistes et d’étudiantEs en études de genre est bénévole.</p>
+					<p>Rejoignez le mouvement IncluZor·e&nbsp;!</p>
+				</div>
+			</div>
+			<div class="row">
+				<footer role="contentinfo" class="col-md-8" id="copy">
+					<small>&copy; IncluZor·e est née lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a>, début 2018.</small>
+				</footer>
+				<div class="col-md-4" id="contact">
+					<a href="https://github.com/Guiraud/incluzor-e"><i class="fab fa-github-alt fa-2x"></i></a>
+					<a href="http://wiki.incluzor.fr/"><i class="fab fa-wikipedia-w fa-2x"></i></a>
+					<a href="https://twitter.com/incluzor"><i class="fab fa-twitter fa-2x"></i></a>
+					<a href="https://www.facebook.com/incluzor/"><i class="fab fa-facebook-f fa-2x"></i></a>
+					<a href="mailto:contact@incluzor.fr"><i class="far fa-envelope fa-2x"></i></a>
+				</div>
+			</div>
+		</div>
+		<img style="position: fixed; top: 0; right: 0; border: 0; z-index: 999" src="img/beta.png" alt="version beta">
+	</div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="custom.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </body>
+</html>

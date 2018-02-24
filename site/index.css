@@ -1,0 +1,78 @@
+
+/* VERT : #007a76; */
+/* GRIS : #718297; */
+/* VIOLET : #554971; */
+/* JAUNE CLAIR : #FDD835; */
+/* JAUNE FONCE #FFC107; */
+
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+#mybtn{
+	background-color: #FDD835;
+	border-radius: 25px;
+}
+
+#photo{
+	background: url("img/banner.png");
+	background-size: cover;
+	height: 500px;
+}
+#convertisseur{
+	background-color: #fffDE7;
+	padding-bottom: 50px;
+	opacity: 0.9em;
+}
+.newtext{
+	background-color: transparent;
+}
+
+#onglet{
+	font-size: 10px;
+}
+#a-propos{
+	background-color: #FDD835;
+}
+#a-propos h1{
+	position: relative;
+	font-size: 150px;
+	opacity: 0.6;
+	color: #FFC107;
+}
+#a-propos p {
+	position: relative;
+	margin-top: -70px;
+}
+
+textarea{
+	margin: 20px;
+}
+
+h2 {
+	margin: 50px;
+	padding-top: 10px;
+}
+#footer{
+	background-color: #007a76;
+	color: #ffffff;
+	padding-bottom: 20px;
+}
+
+#img-logo{
+	width: 150px;
+	margin: 20px;
+	vertical-align: center;
+	margin-top: ;
+
+}
+#copy{
+	text-align: left;
+	font-size: 10px;
+}
+#icon{
+	text-align: center;
+	color: #ffffff;
+}
+
