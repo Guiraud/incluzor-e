@@ -17,6 +17,8 @@ body, body * { color: #33233C; }
 .container { background: white }*/
 
 a { text-decoration: underline; }
+a:hover,
+a:hover * { color: #28a745; }
 
 h2 {
 	/*margin: 50px 0;*/
@@ -58,11 +60,11 @@ header p { padding-bottom: 12px; }
 /* ---------------------------------------------------------------------- */
 main { margin-bottom: 30px }
 
-#convertisseur{
+#convertisseuse{
 	/*background-color: #fffDE7;*/
 }
-#convertisseur label p { margin: 0; }
-#convertisseur .lead { margin-bottom: 40px; } 
+#convertisseuse label p { margin: 0; }
+#convertisseuse .lead { margin-bottom: 40px; } 
 .origine,
 .newtext {
 	clear: both;
@@ -74,8 +76,6 @@ main { margin-bottom: 30px }
 .newtext{
 	background-color: #F5F5F5;
 }
-#buttons .dropdown,
-#buttons .btn-primary { float: left; }
 
 #more{ padding-top: 40px; }
 #more ul,
