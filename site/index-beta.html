@@ -39,7 +39,7 @@
 			<div class="header-inner">
 				<div class="container">
 					<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
-					<p id="slogan">Convertisseuse de textes en langage inclusif</p>
+					<p id="slogan">Convertisseuse de texte en langage inclusif</p>
 				</div>
 			</div>
 		</div>
@@ -49,13 +49,13 @@
 		<div class="section" id="convertisseuse">
 			<div class="container">
 				<h2>Convertir</h2>
-				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive, pour vous aider à&nbsp;trouver les&nbsp;formulations qui&nbsp;évitent les&nbsp;discriminations dans le&nbsp;langage.</p>
+				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive pour vous aider à&nbsp;trouver les&nbsp;formulations qui&nbsp;évitent les&nbsp;discriminations dans le&nbsp;langage.</p>
 
 				<div class="alert alert-warning" role="alert">
 					<p>Attention, ce formulaire est en cours de développement&nbsp;: selon les moments, il peut être opérationnel ou totalement hors service. Nous sommes en train de serrer les derniers boulons… Merci de votre compréhension. Vos retours sont bienvenus&nbsp;!</p>
 				</div>
 
-				<form>
+				<form id="incluzor" action="" name="text_form" method="post" enctype="">
 					<div class="row">
 						<div class="col-md-6">
 							<label for="pass_data">Saisir ici le texte que vous souhaitez réécrire de façon inclusive&nbsp;:</label>
@@ -69,19 +69,17 @@
 						<div class="col-md-6">
 							<div class="row">
 								<div class="btn-group">
-									<div class="dropdown">
-										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1 onglet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Double flexion <span class="caret"></span></button>
-										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-											<li><a href="#">Double flexion</a></li>
-											<li><a href="#">Lecture silencieuse</a></li>
-											<li><a href="#">NuitDeboutiste</a></li>
-											<li><a href="#">Débinarisante</a></li>
-											<li><a href="#">Neutre</a></li>
-										</ul>
-									</div>
+								    <label for="Select1" class="offscreen">Example select</label>
+								    <select class="form-control" id="Select1">
+								      <option>Double flexion</option>
+								      <option>Lecture silencieuse</option>
+								      <option>NuitDeboutiste</option>
+								      <option>Débinarisante</option>
+								      <option>Neutre</option>
+								    </select>
 									<button class="btn btn-success">Réécrire</button>
 								</div>
-								<div class="newtext" type="text" cols="50" rows="14">…</div>
+								<div class="newtext">…</div>
 							</div>
 						</div>
 					</div>
