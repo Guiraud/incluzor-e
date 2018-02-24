@@ -15,4 +15,4 @@ L’équipe IncluZor·e, composée d’informatic·ien·cienne·s, de Web design
     
 Rejoignez le mouvement IncluZor·e !
 
-contact@incluzor.fr
+http://incluzor.fr
