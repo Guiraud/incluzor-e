@@ -15,4 +15,4 @@ Composée d’informatic·ien·cienne·s, de webdesigners, de linguistes, d’un
     
 Rejoignez le mouvement IncluZor·e !
 
-http://incluzor.fr
+http://www.incluzor.fr
