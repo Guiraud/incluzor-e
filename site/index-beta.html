@@ -14,42 +14,41 @@
 	<link rel="stylesheet" href="custom.css" type="text/css">
 
 	<link rel="icon" href="favicon.ico">
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 	<link rel="manifest" href="/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
   </head>
 
   <body>
 	<header role="banner">
-		<div class="header-sticky">
-			<div class="header-inner">
-				<div class="container">
-					<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
-					<p id="slogan">Convertisseuse de texte en langage inclusif</p>
-				</div>
+		<div class="header-inner">
+			<div class="container">
+				<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
+				<p id="slogan">Convertisseuse de texte en langage inclusif</p>
+				<img style="position: fixed; top: 0; right: 0; border: 0; z-index: 999" src="img/beta.png" alt="version beta">
 			</div>
 		</div>
 	</header>
 
 	<main role="main">
-		<div class="section" id="convertisseuse">
+		<div id="convertisseuse">
 			<div class="container">
-				<h2>Convertir</h2>
-				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive pour vous aider à&nbsp;trouver les&nbsp;formulations qui&nbsp;évitent les&nbsp;discriminations dans le&nbsp;langage.</p>
+				<h2 class="offscreen">Convertir</h2>
+				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive, de plusieurs manières, pour vous aider à&nbsp;éviter les&nbsp;discriminations dans le&nbsp;langage.</p>
 
 				<div class="alert alert-warning" role="alert">
 					<p>Attention, ce formulaire est en cours de développement&nbsp;: selon les moments, il peut être opérationnel ou totalement hors service. Nous sommes en train de serrer les derniers boulons… Merci de votre compréhension. Vos retours sont bienvenus&nbsp;!</p>
@@ -58,7 +57,7 @@
 				<form id="incluzor" action="" name="text_form" method="post" enctype="">
 					<div class="row">
 						<div class="col-md-6">
-							<label for="pass_data">Saisir ici le texte que vous souhaitez réécrire de façon inclusive&nbsp;:</label>
+							<label for="pass_data">Texte à réécrire de façon inclusive&nbsp;:</label>
 							<textarea 	class="origine" 
 										type="text" 
 										id="pass_data" 
@@ -67,59 +66,47 @@
 										placeholder="Ex.: la France est une République indivisible, laïque, démocratique et sociale. Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion."></textarea>
 						</div>
 						<div class="col-md-6">
-							<div class="row">
-								<div class="btn-group">
-								    <label for="Select1" class="offscreen">Choisir la réécriture</label>
-								    <select class="form-control" id="Select1">
-								      <option>Double flexion</option>
-								      <option>Lecture silencieuse</option>
-								      <option>Deboutiste</option>
-								      <option>Débinarisante</option>
-								      <option>Neutre</option>
-								    </select>
-									<button class="btn btn-success">Convertir</button>
-								</div>
-								<div class="newtext"> </div>
+							<div class="btn-group">
+							    <label for="select" class="offscreen">Choisir la réécriture</label>
+							    <select class="form-control" id="select">
+							      <option>Doublets</option>
+							      <option>Lecture silencieuse</option>
+							      <option>Deboutiste</option>
+							      <option>Débinarisante</option>
+							      <option>Neutre</option>
+							    </select>
+								<button class="btn btn-success">Convertir</button>
+								<button class="btn" type="button" data-toggle="collapse" data-target="#help" aria-expanded="false" aria-controls="help"><span class="far fa-question-circle" title="Aide"></span> <span class="offscreen">Aide</span></button>
 							</div>
+
+						    <div class="collapse" id="help">
+						      <div class="card card-body bg-light small">
+								<p>Il existe bien des manières de rédiger de façon inclusive&nbsp;! Voici celles ici disponibles, à&nbsp;adapter à&nbsp;votre guise&nbsp;:</p>
+								<ul>
+									<li><strong>Doublets&nbsp;:</strong> les noms et adjectifs sont doublés du genre manquant.</li>
+									<li><strong>Lecture silencieuse&nbsp;:</strong> cette orthographe permet d'oraliser mentalement.</li>
+									<li><strong>Deboutiste&nbsp;:</strong> pour visibiliter les femmes et les hommes de la même manière.</li>
+									<li><strong>Débinarisante&nbsp;:</strong> pour atténuer les marques de genre, vers davantage de neutralité.</li>
+									<li><strong>Neutre&nbsp;:</strong> un genre commun proposé par Alpheratz.</li>
+								</ul>
+								<p>Pour en savoir plus, <a href="http://wiki.incluzor.fr">consultez la documentation</a>.</p>
+						      </div>
+						    </div>
+
+							<div class="newtext"> </div>
 						</div>
 					</div>
 				</form>
 
 			</div>
 		</div>
-
-		<div class="container-fluid clearfix" id="more">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-							<h3>À&nbsp;vous de choisir&nbsp;!</h3>
-							<p>Il existe plusieurs manières de rédiger de façon inclusive, à&nbsp;adapter à&nbsp;votre guise&nbsp;:</p>
-						<ul>
-							<li><strong>Double flexion&nbsp;:</strong> les noms et adjectifs sont doublés du genre manquant.</li>
-							<li><strong>Lecture silencieuse&nbsp;:</strong> cette orthographe permet d'oraliser mentalement.</li>
-							<li><strong>Deboutiste&nbsp;:</strong> pour visibiliter les femmes et les hommes de la même manière.</li>
-							<li><strong>Débinarisante&nbsp;:</strong> pour atténuer les marques de genre, vers davantage de neutralité.</li>
-							<li><strong>Neutre&nbsp;:</strong> Un genre commun proposé par Alpheratz.</li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h3>Pour aller plus loin</h3> 
-						<p>Cette convertisseuse s'appuie sur les travaux linguistiques suivants, que vous pouvez utiliser pour rédiger vos textes&nbsp;:</p>
-						<ul>
-							<li><a href="http://www.ecriture-inclusive.fr/">Manuel d'écriture inclusive</a></li>
-							<li><a href="https://www.syllepse.net/lng_FR_srub_62_iprod_716-manuel-de-grammaire-non-sexiste-et-inclusive.html">Manuel de grammaire non sexiste et inclusive</a></li>
-							<li>etc.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
 	</main>
 
-	<div class="section" id="footer">
+	<div id="footer">
 		<div class="container">
+			<hr>
 			<div class="row" id="about">
-				<div class="col-md-12 small quiet">
+				<div class="col-md-12 small">
 					<h2>À propos</h2>
 					<p>IncluZor·e s’inscrit dans le contexte sociétal actuel, qui semble enfin capable d’accorder les droits d’expression et de représentation aux femmes et aux personnes ne se reconnaissant pas dans la binarité des genres féminin et masculin.</p>
 					<p>Ce&nbsp;site et cet outil visent à fournir à toute personne souhaitant convertir un texte en français inclusif les moyens de le faire de la façon la plus pertinente et adéquate pour elle. La&nbsp;convertisseuse IncluZor·e s’adresse à toutes celles et ceux qui souhaitent nommer les femmes à part égale dans leurs discours et leurs écrits. Elle&nbsp;s’adresse aussi à&nbsp;toustes celleux qui veulent s’exprimer dans une langue non strictement binaire, c’est-à-dire dans une langue qui reflète des positions genrées plus complexes et/ou plus fluides. La&nbsp;convertisseuse met à la disposition de toustes plusieurs procédés d’inclusion — des doublets féminin masculin (lectrices et lecteurs) aux néologismes (lecteurices), dont des neutres (lectaires).</p>
@@ -127,6 +114,7 @@
 					<p>Rejoignez le mouvement IncluZor·e&nbsp;!</p>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<footer role="contentinfo" class="col-md-8">
 					<small>&copy; IncluZor·e est née lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a>, début 2018.</small>
@@ -134,7 +122,7 @@
 				<div id="contact" class="col-md-4">
 					<h3 class="offscreen">Contacts</h3>
 					<ul>
-						<li><a href="https://github.com/Guiraud/incluzor-e" class="github"><span class="fab fa-github-alt fa-2x" title="Github"></span> <span class="offscreen">Github</span></a></li>
+						<li><a href="https://github.com/Guiraud/incluzor-e" class="github"><span class="fab fa-github fa-2x" title="Github"></span> <span class="offscreen">Github</span></a></li>
 						<li><a href="http://wiki.incluzor.fr" class="wiki"><span class="fab fa-wikipedia-w fa-2x" title="Wiki"></span> <span class="offscreen">Wiki</span></a></li>
 						<li><a href="https://twitter.com/incluzor" class="twitter"><span class="fab fa-twitter fa-2x" title="Twitter"></span> <span class="offscreen">Twitter</span></a></li>
 						<li><a href="https://www.facebook.com/incluzor/" class="facebook"><span class="fab fa-facebook-f fa-2x" title="Facebook"></span> <span class="offscreen">Facebook</span></a></li>
@@ -143,7 +131,6 @@
 				</div>
 			</div>
 		</div>
-		<img style="position: fixed; top: 0; right: 0; border: 0; z-index: 999" src="img/beta.png" alt="version beta">
 	</div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

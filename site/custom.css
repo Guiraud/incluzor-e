@@ -9,12 +9,9 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: #33233C;
     background: #F8F8F8;
 }
 body, body * { color: #33233C; }
-/*.section { background: yellow; }
-.container { background: white }*/
 
 a { text-decoration: underline; }
 a:hover,
@@ -29,8 +26,6 @@ h3 { font-size: 1.25rem; font-weight: bold; }
 
 .alert p { margin: 0; }
 .todo { opacity: .5; }
-.quiet { opacity: .8; }
-.quiet:hover { opacity: 1; }
 
 .offscreen { position: absolute; left: -999em; height: 1%; }
 .none { display: none !important; }
@@ -64,7 +59,9 @@ main { margin-bottom: 30px }
 
 #convertisseuse { /*background-color: #fffDE7;*/ }
 #convertisseuse label p { margin: 0; }
-#convertisseuse .lead { margin-bottom: 40px; }
+#convertisseuse .lead { margin: 40px 0; }
+
+#help :last-child { margin-bottom: 0; }
 
 .origine,
 .newtext {
@@ -155,11 +152,11 @@ main { margin-bottom: 30px }
 
 /* footer */
 /* ---------------------------------------------------------------------- */
-#footer { padding: 20px 0; border-top: 1px solid #CCC; }
+#footer { padding-bottom: 16px; }
 #footer * { vertical-align: middle; }
 #about h2 { font-size: 100%; font-weight: bold; }
 #footer h2,
-#footer p { margin-bottom: .5em; }
+#footer p { margin-top: 0; padding-top: 0; margin-bottom: .5em; }
 
 #contact { text-align: right; }
 #contact ul,
