@@ -32,7 +32,7 @@ h3 { font-size: 1.25rem; font-weight: bold; }
 .quiet { opacity: .8; }
 .quiet:hover { opacity: 1; }
 
-.offscreen{position:absolute;left:-999em;height:1%}
+.offscreen { position: absolute; left: -999em; height: 1%; }
 .none { display: none !important; }
 
 
@@ -95,8 +95,15 @@ main { margin-bottom: 30px }
 #footer * { vertical-align: middle; }
 #about h2 { font-size: 100%; font-weight: bold; }
 #footer h2,
-#footer p { margin: 0; }
+#footer p { margin-bottom: .5em; }
+
 #contact { text-align: right; }
+#contact ul,
+#contact li { margin: 0; padding: 0; list-style: none; display: inline; }
 #contact a { display: inline-block; min-width: 40px; padding: 0 2px; text-align: center; }
+#contact a.github:hover * { color: #913399; }
+#contact a.wiki:hover * { color: #C19B35; }
+#contact a.twitter:hover * { color: #1B95E0; }
+#contact a.facebook:hover * { color: #405A94; }
 
 /* end */
