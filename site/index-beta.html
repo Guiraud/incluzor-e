@@ -35,20 +35,18 @@
 
   <body>
 	<header role="banner">
-		<div class="header-sticky">
-			<div class="header-inner">
-				<div class="container">
-					<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
-					<p id="slogan">Convertisseuse de texte en langage inclusif</p>
-				</div>
+		<div class="header-inner">
+			<div class="container">
+				<h1><img src="img/logo.png" alt="" id="logo"><br>IncluZor·e</h1>
+				<p id="slogan">Convertisseuse de texte en langage inclusif</p>
 			</div>
 		</div>
 	</header>
 
 	<main role="main">
-		<div class="section" id="convertisseuse">
+		<div id="convertisseuse">
 			<div class="container">
-				<h2>Convertir</h2>
+				<h2 class="offscreen">Convertir</h2>
 				<p class="lead">IncluZor·e réécrit automatiquement tout texte français de façon inclusive pour vous aider à&nbsp;trouver les&nbsp;formulations qui&nbsp;évitent les&nbsp;discriminations dans le&nbsp;langage.</p>
 
 				<div class="alert alert-warning" role="alert">
@@ -67,20 +65,18 @@
 										placeholder="Ex.: la France est une République indivisible, laïque, démocratique et sociale. Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion."></textarea>
 						</div>
 						<div class="col-md-6">
-							<div class="row">
-								<div class="btn-group">
-								    <label for="Select1" class="offscreen">Choisir la réécriture</label>
-								    <select class="form-control" id="Select1">
-								      <option>Double flexion</option>
-								      <option>Lecture silencieuse</option>
-								      <option>Deboutiste</option>
-								      <option>Débinarisante</option>
-								      <option>Neutre</option>
-								    </select>
-									<button class="btn btn-success">Convertir</button>
-								</div>
-								<div class="newtext"> </div>
+							<div class="btn-group">
+							    <label for="select" class="offscreen">Choisir la réécriture</label>
+							    <select class="form-control" id="select">
+							      <option>Double flexion</option>
+							      <option>Lecture silencieuse</option>
+							      <option>Deboutiste</option>
+							      <option>Débinarisante</option>
+							      <option>Neutre</option>
+							    </select>
+								<button class="btn btn-success">Convertir</button>
 							</div>
+							<div class="newtext"> </div>
 						</div>
 					</div>
 				</form>
@@ -116,10 +112,11 @@
 		</div>
 	</main>
 
-	<div class="section" id="footer">
+	<div id="footer">
 		<div class="container">
+			<hr>
 			<div class="row" id="about">
-				<div class="col-md-12 small quiet">
+				<div class="col-md-12 small">
 					<h2>À propos</h2>
 					<p>IncluZor·e s’inscrit dans le contexte sociétal actuel, qui semble enfin capable d’accorder les droits d’expression et de représentation aux femmes et aux personnes ne se reconnaissant pas dans la binarité des genres féminin et masculin.</p>
 					<p>Ce&nbsp;site et cet outil visent à fournir à toute personne souhaitant convertir un texte en français inclusif les moyens de le faire de la façon la plus pertinente et adéquate pour elle. La&nbsp;convertisseuse IncluZor·e s’adresse à toutes celles et ceux qui souhaitent nommer les femmes à part égale dans leurs discours et leurs écrits. Elle&nbsp;s’adresse aussi à&nbsp;toustes celleux qui veulent s’exprimer dans une langue non strictement binaire, c’est-à-dire dans une langue qui reflète des positions genrées plus complexes et/ou plus fluides. La&nbsp;convertisseuse met à la disposition de toustes plusieurs procédés d’inclusion — des doublets féminin masculin (lectrices et lecteurs) aux néologismes (lecteurices), dont des neutres (lectaires).</p>
@@ -127,6 +124,7 @@
 					<p>Rejoignez le mouvement IncluZor·e&nbsp;!</p>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<footer role="contentinfo" class="col-md-8">
 					<small>&copy; IncluZor·e est née lors du <a href="http://hackecritureinclusive.com/">Hackathon Écriture Inclusive</a>, début 2018.</small>
