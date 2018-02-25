@@ -9,7 +9,6 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: #33233C;
     background: #F8F8F8;
 }
 body, body * { color: #33233C; }
@@ -62,6 +61,8 @@ main { margin-bottom: 30px }
 #convertisseuse label p { margin: 0; }
 #convertisseuse .lead { margin: 40px 0; }
 
+#help :last-child { margin-bottom: 0; }
+
 .origine,
 .newtext {
 	width: 100%;
@@ -87,7 +88,7 @@ main { margin-bottom: 30px }
 
 /* footer */
 /* ---------------------------------------------------------------------- */
-#footer {}
+#footer { padding-bottom: 16px; }
 #footer * { vertical-align: middle; }
 #about h2 { font-size: 100%; font-weight: bold; }
 #footer h2,
