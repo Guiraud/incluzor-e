@@ -11,7 +11,7 @@ La convertisseuse met à la disposition de toustes plusieurs procédés d’incl
 Le projet IncluZor·e dispose d’une pertinence linguistique : en se fondant sur les usages actuels et les travaux de linguistes féministes, queer, non binaires ou agenres, sur les travaux de recherche syntaxique de l’INRIA, il propose des lexiques et des points de grammaire inclusive (tel cet accord en genre et nombre avec le terme le plus proche, le fameux accord de proximité).
 Il est doté d’une pertinence technique, reposant sur des analyseurs et des algorithmes.
 Il est  le fruit d’un travail collectif, rassemblant des amoureureuses de la langue française et de l’expression sans discrimination.
-L’équipe IncluZor·e, composée d’informatic·ien·cienne·s, de Web designers, de linguistes, d’une ancienne lexicographe, de rédactrice·teurs, de journalistes et d’étudiantEs en études de genre est bénévole.
+Composée d’informatic·ien·cienne·s, de webdesigners, de linguistes, d’une ancienne lexicographe, de rédactrice·teurs, de journalistes et d’étudiantEs en études de genre, l’équipe IncluZor·e est bénévole.
     
 Rejoignez le mouvement IncluZor·e !
 
