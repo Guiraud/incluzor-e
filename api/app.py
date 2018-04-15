@@ -86,7 +86,7 @@ def get_inclusive():
     """ Trouver la liste des mots inclusives """
 
     # Paramètre: Le mot à retourner
-    mot_masc = request.args.get('macs')
+    mot_masc = request.args.get('masc')
     mot_masc = re.split(' ', mot_masc)[0]
 
     # Trouver les versions inclusives
