@@ -9,6 +9,9 @@ from io import StringIO
 from nltk.tree import Tree
 import re
 
+import os
+from pymongo import MongoClient
+
 # Setup Flask
 app = FlaskAPI(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -18,6 +21,13 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # Setup Parser
 parser = Parser()
 nlp = StanfordCoreNLP('http://localhost:9000')
+
+# Connection à mongo
+mongo_password = os.environ.get('MONGO_PASSWORD')
+mongo_client = MongoClient("mongodb+srv://incluzor:{p}@incluzor-1ocjv.mongodb.net/test".format(p=mongo_password))
+mongo_db = mongo_client['incluzor']
+mongo_col = mongo_db["lexique-validé"]
+
 
 @app.route("/", methods=['GET'])
 def parse_sentence():
@@ -69,6 +79,64 @@ def parse_sentence():
 
         return {"converted_text": all_output, "converted_text_html": html_output, "parsed_sentences": parsed_output}
     return {"Status": "Fail"}
+
+
+@app.route("/mots/inclusive", methods=['GET'])
+def get_inclusive():
+    """ Trouver la liste des mots inclusives """
+
+    # Paramètre: Le mot à retourner
+    mot_masc = request.args.get('macs')
+    mot_masc = re.split(' ', mot_masc)[0]
+
+    # Trouver les versions inclusives
+    res = mongo_col.find_one({"$or": [{"masc_sing": mot_masc},
+                             {"masc_plur": mot_masc}]})
+    res_erreur = None
+
+    if res is None:
+        res = None
+        res_erreur = "Mot pas trouvé."
+    else:
+        res.pop("_id")
+        ajoute_frequence_proportionelle(res["feminines"])
+
+    # Return un objet json.
+    output = {"mot_requete": mot_masc, "incluzives": res, "erreur": res_erreur}
+    return output
+
+
+def ajoute_frequence_proportionelle(versions_fem):
+    """ Fréquence des mots féminins. Pour le moment nous resons sur
+        les mots féminins car nous n'avons pas des calculs de la fréquence
+        des versions iclusives ou au neutre. """
+
+    # Fréquence totale
+    total_freq = 0
+    for version in versions_fem:
+        total_freq = total_freq + version["count"]
+
+    # Calcule les fréquence proportionelle de chaque version
+    for version in versions_fem:
+        version["rating"] = version["count"] / total_freq
+
+
+@app.route("/mots/index", methods=['GET'])
+def get_mots():
+    """ Trouver la liste de mots (masculins) """
+
+    # Paramètre: Les lettres du début des mots à retourner
+    prefix_text = request.args.get('q')
+
+    if prefix_text == None:
+        prefix_text = ""
+
+    # Trouver les mots dans mongo qui commence avec ces lettres.
+    # TODO: changer ça à quelque chose plus efficace
+    regx = re.compile("^"+prefix_text, re.IGNORECASE)
+    output = mongo_col.distinct("masc_sing", {"masc_sing": regx})
+
+    return output
 
 
 if __name__ == '__main__':
