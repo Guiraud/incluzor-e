@@ -102,7 +102,7 @@ def get_inclusive():
         ajoute_frequence_proportionelle(res["feminines"])
 
     # Return un objet json.
-    output = {"mot_requete": mot_masc, "incluzives": res, "erreur": res_erreur}
+    output = {"mot_requete": mot_masc, "inclusives": res, "erreur": res_erreur}
     return output
 
 
