@@ -94,6 +94,7 @@ def get_inclusive():
     res = mongo_col.find_one({"$or": [{"masc_sing": mot_masc},
                              {"masc_plur": mot_masc}]})
     res_erreur = None
+    print(res)
 
     if res is None:
         res = None
@@ -111,8 +112,9 @@ def get_inclusive():
 def nettoyer_resultats(versions_fem):
     """ nettoyer la colonne 'note'  """
     for version in versions_fem:
-        if np.isnan(version["note"]):
-            version["note"] = None
+        if type(version["note"]) == float:
+            if np.isnan(version["note"]):
+                version["note"] = None
 
 
 def ajoute_frequence_proportionelle(versions_fem):
