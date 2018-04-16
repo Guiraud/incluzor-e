@@ -11,6 +11,7 @@ import re
 
 import os
 from pymongo import MongoClient
+import numpy as np
 
 # Setup Flask
 app = FlaskAPI(__name__)
@@ -100,10 +101,18 @@ def get_inclusive():
     else:
         res.pop("_id")
         ajoute_frequence_proportionelle(res["feminines"])
+        nettoyer_resultats(res["feminines"])
 
     # Return un objet json.
     output = {"mot_requete": mot_masc, "inclusives": res, "erreur": res_erreur}
     return output
+
+
+def nettoyer_resultats(versions_fem):
+    """ nettoyer la colonne 'note'  """
+    for version in versions_fem:
+        if np.isnan(version["note"]):
+            version["note"] = None
 
 
 def ajoute_frequence_proportionelle(versions_fem):
