@@ -18,9 +18,9 @@ a:hover,
 a:hover * { color: #28a745; }
 
 h2 {
-	/*margin: 50px 0;*/
-	padding-top: 20px;
-	font-size: 1.5rem; font-weight: bold;
+    /*margin: 50px 0;*/
+    padding-top: 20px;
+    font-size: 1.5rem; font-weight: bold;
 }
 h3 { font-size: 1.25rem; font-weight: bold; }
 
@@ -36,8 +36,8 @@ h3 { font-size: 1.25rem; font-weight: bold; }
 /* ---------------------------------------------------------------------- */
 header { text-align: center; }
 /*.header-sticky {
-	width: 100%;
-	position: fixed;
+  width: 100%;
+  position: fixed;
     z-index: 999;
 }*/
 .header-inner {
@@ -45,10 +45,10 @@ header { text-align: center; }
     border-bottom: 0 solid rgba(255, 255, 255, 0.5);
 }
 #logo {
-	width: 150px;
-	margin: 20px;
-	vertical-align: center;
-	margin-top: ;
+    width: 150px;
+    margin: 20px;
+    vertical-align: center;
+    margin-top: ;
 }
 header h1 { margin: 0; padding: 12px 0 0; line-height: 1; font-weight: bold; }
 header p { padding-bottom: 12px; }
@@ -63,14 +63,17 @@ main { margin-bottom: 30px }
 
 #help :last-child { margin-bottom: 0; }
 
-.origine,
+.origine
+{
+    width: 100%;
+}
 .newtext {
-	width: 100%;
-	min-height: 12em;
-	padding: 2px;
+    width: 100%;
+    min-height: 12em;
+    padding: 2px;
 }
 .newtext{
-	background-color: #EEE;
+    background-color: #EEE;
 }
 
 #more{ padding-top: 40px; }
@@ -78,10 +81,10 @@ main { margin-bottom: 30px }
 #more li {}
 #more span {}
 #more span.big {
-/*	font-size: 150px;
-	opacity: .6;
-	color: #fff3cd;
-	line-height: 0; */
+/*  font-size: 150px;
+  opacity: .6;
+  color: #fff3cd;
+  line-height: 0; */
 }
 #more span.big::after { content: "."; }
 #more span.p {}
@@ -90,28 +93,27 @@ main { margin-bottom: 30px }
 
 
 .box {
-  #display: flex;
-  transition: box-shadow .3s;
-  min-height: 130px;
-  width: 500px;
-  height: 2px;
-  margin: 10px;
-  border-radius:10px;
-  border: 1px solid #ccc;
-  background-color: rgba(33,33,33,.2);
-  #background: #fff;
-  float: left;
-  color: #777;
-  
+    #display: flex;
+    transition: box-shadow .3s;
+    min-height: 130px;
+    width: 500px;
+    height: 2px;
+    margin: 10px;
+    border-radius:10px;
+    border: 1px solid #ccc;
+    background-color: rgba(33,33,33,.2);
+    #background: #fff;
+    float: left;
+    color: #777;
 }
 
 .box:h3 {
-  color: #777;
+    color: #777;
 }
 .box:hover {
-  color: #000;
-  box-shadow: 0 0 30px rgba(33,33,33,.2);
-  background-color: rgba(255,255,255,.2);
+    color: #000;
+    box-shadow: 0 0 30px rgba(33,33,33,.2);
+    background-color: rgba(255,255,255,.2);
 }
 .accordion {
     background-color: #eee;
@@ -168,3 +170,91 @@ main { margin-bottom: 30px }
 #contact a.facebook:hover * { color: #405A94; }
 
 /* end */
+
+
+/* NEW CSS ajouter par Guy avec la version mot par mot */
+
+#loading_dial{
+    display: none;
+}
+
+#resultat_erreurs{
+    display: none;
+}
+
+#resultats_liste{
+    display: none;
+}
+
+/* Loading dial */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.resultats{
+    padding: 30px;
+}
+
+
+/* ToolTip */
+.tooltip {
+    width: 350px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    padding: 50px;
+    margin: 100px auto;
+    background: white;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,.05);
+}
+
+.tool {
+    cursor : help;
+    position : relative;
+}
+
+.tool::before, .tool::after {
+    position : absolute;
+    left : 50%;
+    opacity : 0;
+    z-index: -100;
+}
+
+.tool:hover::before, .tool:focus::before, .tool:hover::after, .tool:focus::after {
+    opacity : 1;
+    z-index: 100;
+}
+
+.tool::before {
+    border-style : solid;
+    border-width : 1em .75em 0 .75em;
+    border-color : #3e474f transparent transparent transparent;
+    bottom : 100%;
+    margin-left : -.5em;
+    content : " ";
+}
+
+.tool::after {
+    background : #3e474f;
+    border-radius : .25em;
+    bottom : 180%;
+    color : white;
+    width : 17.5em;
+    padding: 1em;
+    margin-left : -8.75em;
+    content : attr(data-tip);
+}
