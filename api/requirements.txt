@@ -6,3 +6,7 @@ pandas
 flask-cors
 pymongo
 dnspython
+sqlalchemy
+psycopg2
+unidecode
+
