@@ -13,6 +13,10 @@ import os
 from pymongo import MongoClient
 import numpy as np
 
+from sqlalchemy import create_engine
+import pandas as pd
+import unidecode
+
 # Setup Flask
 app = FlaskAPI(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -150,6 +154,20 @@ def get_mots():
     return output
 
 
+@app.route("/mots/fréquence", methods=['GET'])
+def get_freq():
+    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
+
+    word = request.args.get('q')
+
+    output = {}
+    if type(word) == str:
+        ngrams = pd.read_sql("select * from ngrams{l} where word = '{w}';".format(l=unidecode.unidecode(word[0]), w=word), engine)
+        output["ngrams"] = (int)(ngrams["year"].sum())
+
+    return output
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=5005)
+
