@@ -9,4 +9,7 @@ dnspython
 sqlalchemy
 psycopg2
 unidecode
+beautifulsoup4
+requests
+requests[socks]
 

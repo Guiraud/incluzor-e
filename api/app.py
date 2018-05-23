@@ -17,6 +17,9 @@ from sqlalchemy import create_engine
 import pandas as pd
 import unidecode
 
+import requests
+from bs4 import BeautifulSoup
+
 # Setup Flask
 app = FlaskAPI(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -167,7 +170,129 @@ def get_freq():
 
     return output
 
+
+@app.route("/mots/dict", methods=['GET'])
+def check_dict():
+    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
+
+    mot = request.args.get('mot')
+    dictionnaire = request.args.get('dictionnaire')
+
+    print(dictionnaire)
+
+    if dictionnaire == "cnrtl":
+        output = scrape_cnrtl(mot)
+    if dictionnaire == "larousse":
+        output = scrape_larousse(mot)
+    if dictionnaire == "littré":
+        output = scrape_littré(mot)
+    # if dictionnaire == "reverso":
+    #     output = scrape_reverso(mot)
+    if dictionnaire == "wiktionnaire":
+        output = get_wiktionnaire(mot)
+    if dictionnaire == "olfq":
+        output = get_olfq(mot)
+    if dictionnaire == "lefff":
+        output = get_lefff(mot)
+    if dictionnaire == "dicollecte":
+        output = get_dicollecte(mot)
+
+    return {"existe": output}
+
+
+def scrape_cnrtl(mot):
+    proxies = {
+        'http': 'socks5://127.0.0.1:9050',
+        'https': 'socks5://127.0.0.1:9050'
+    }
+    r = requests.get('http://www.cnrtl.fr/definition/'+mot, proxies=proxies)
+
+    soup = BeautifulSoup(r.text, 'html.parser')
+    content = soup.find(id="contentbox")
+    if content:
+        if "ErreurCette forme est introuvable !" in content.getText():
+            return False
+        elif "Terme introuvable" in content.getText():
+            return False
+        else:
+            return True
+    else:
+        raise Exception("'Contentbox' pas trouvé")
+
+
+def scrape_larousse(mot):
+    proxies = {
+        'http': 'socks5://127.0.0.1:9050',
+        'https': 'socks5://127.0.0.1:9050'
+    }
+    r = requests.get('http://www.larousse.fr/dictionnaires/francais/' + mot, proxies=proxies)
+
+    soup = BeautifulSoup(r.text, 'html.parser')
+    if soup.find(class_="corrector"):
+        return False
+    if soup.find(class_="BlocDefinition"):
+        return True
+    else:
+        raise Exception("'Contentbox' pas trouvé")
+
+
+def scrape_littré(mot):
+    proxies = {
+        'http': 'socks5://127.0.0.1:9050',
+        'https': 'socks5://127.0.0.1:9050'
+    }
+    r = requests.get('https://www.littre.org/definition/'+mot, proxies=proxies)
+
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    if soup.find(class_="definition"):
+        return True
+    if "Mot " + mot + " non trouvé" in soup.find(id="main-content").getText():
+        return False
+
+
+# def scrape_reverso(mot):
+#     proxies = {
+#         'http': 'socks5://127.0.0.1:9050',
+#         'https': 'socks5://127.0.0.1:9050'
+#     }
+#     r = requests.get('https://dictionary.reverso.net/french-definition/'+mot, proxies=proxies)
+
+#     soup = BeautifulSoup(r.text, 'html.parser')
+
+#     if soup.find(class_="tNotFound"):
+#         return False
+#     if soup.find(class_="tNotFound"):
+#         return False
+
+def get_wiktionnaire(mot):
+    raise Exception("Not implemented")
+
+
+def get_olfq(mot):
+    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
+    res = pd.read_sql("select * from lexique_olfq where \"Masculin\" = '{w}' or \"Féminin\" = '{w}';".format(w=lower(mot)), engine)
+    if(res.shape[0] != 0):
+        return True
+    return False
+
+
+def get_lefff(mot):
+    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
+    res = pd.read_sql("select * from lexique_lefff where lower(\"flexion\") = '{w}';".format(w=lower(mot)), engine)
+    if(res.shape[0] != 0):
+        return True
+    return False
+
+
+def get_dicollecte(mot):
+    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
+    res = pd.read_sql("select * from lexique_dicollecte where lower(\"Flexion\") = '{w}';".format(w=mot), engine)
+    if(res.shape[0] != 0):
+        return True
+    return False
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=5005)
-
