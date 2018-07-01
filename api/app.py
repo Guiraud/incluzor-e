@@ -22,6 +22,9 @@ from bs4 import BeautifulSoup
 
 # Setup Flask
 app = FlaskAPI(__name__)
+app.config.from_object('default_settings')
+print(app.config["MONGO_STRING"])
+
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -31,10 +34,14 @@ parser = Parser()
 nlp = StanfordCoreNLP('http://localhost:9000')
 
 # Connection à mongo
-mongo_password = os.environ.get('MONGO_PASSWORD')
-mongo_client = MongoClient("mongodb+srv://incluzor:{p}@incluzor-1ocjv.mongodb.net/test".format(p=mongo_password))
-mongo_db = mongo_client['incluzor']
-mongo_col = mongo_db["lexique-validé"]
+# mongo_password = os.environ.get('MONGO_PASSWORD')
+# mongo_string = app.config["PSQL_STRING"]
+# mongo_client = MongoClient("mongodb+srv://incluzor:{p}@incluzor-1ocjv.mongodb.net/test".format(p=mongo_password))
+# mongo_db = mongo_client['incluzor']
+# mongo_col = mongo_db["lexique-validé"]
+
+psql_string = app.config["PSQL_STRING"]
+psql_engine = create_engine(psql_string)
 
 
 @app.route("/", methods=['GET'])
@@ -91,7 +98,7 @@ def parse_sentence():
 
 @app.route("/mots/inclusive", methods=['GET'])
 def get_inclusive():
-    """ Trouver la liste des mots inclusives """
+    """ Trouver la liste de mots inclusifs """
 
     # Paramètre: Le mot à retourner
     mot_masc = request.args.get('masc')
@@ -159,7 +166,6 @@ def get_mots():
 
 @app.route("/mots/fréquence", methods=['GET'])
 def get_freq():
-    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
 
     word = request.args.get('q')
 
@@ -173,8 +179,6 @@ def get_freq():
 
 @app.route("/mots/dict", methods=['GET'])
 def check_dict():
-    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
-
     mot = request.args.get('mot')
     dictionnaire = request.args.get('dictionnaire')
 
@@ -262,32 +266,28 @@ def scrape_littré(mot):
 
 #     if soup.find(class_="tNotFound"):
 #         return False
-#     if soup.find(class_="tNotFound"):
-#         return False
+#     if soup.find(class_="tNotFound"): #         return False
 
 def get_wiktionnaire(mot):
     raise Exception("Not implemented")
 
 
 def get_olfq(mot):
-    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
-    res = pd.read_sql("select * from lexique_olfq where \"Masculin\" = '{w}' or \"Féminin\" = '{w}';".format(w=lower(mot)), engine)
+    res = pd.read_sql("select * from lexique_olfq where \"Masculin\" = '{w}' or \"Féminin\" = '{w}';".format(w=lower(mot)), psql_engine)
     if(res.shape[0] != 0):
         return True
     return False
 
 
 def get_lefff(mot):
-    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
-    res = pd.read_sql("select * from lexique_lefff where lower(\"flexion\") = '{w}';".format(w=lower(mot)), engine)
+    res = pd.read_sql("select * from lexique_lefff where lower(\"flexion\") = '{w}';".format(w=lower(mot)), psql_engine)
     if(res.shape[0] != 0):
         return True
     return False
 
 
 def get_dicollecte(mot):
-    engine = create_engine('postgresql://incluzor:PAN7kZBAGqXQd5FnQs37TtyKqNYKDhCbenRKA@api.incluzor.fr:5432/incluzor')
-    res = pd.read_sql("select * from lexique_dicollecte where lower(\"Flexion\") = '{w}';".format(w=mot), engine)
+    res = pd.read_sql("select * from lexique_dicollecte where lower(\"Flexion\") = '{w}';".format(w=mot), psql_engine)
     if(res.shape[0] != 0):
         return True
     return False
