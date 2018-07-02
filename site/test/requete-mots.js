@@ -1,18 +1,17 @@
 $(document).ready(function(){
 
-  // Fair un appel vers le serveur pour 
+  // Autocomplete
   $(function(){
     $("#pass_data").autocomplete({
       source: function( request, response ) {
         $.ajax({
-          url: "http://api.incluzor.fr:5005/mots/index",
+          url: "http://api.incluzor.fr:8000/api/mots/liste/",
           dataType: "json",
           data: {
             q: request.term
           },
           success: function( data ) {
-            // les 10 premiers resultats pour que la liste soit pas trop longue
-            response(data.slice(0, 10));
+            response(data.results.map(x => x.masculin_singulier));
           }
         });
       },
@@ -27,6 +26,79 @@ $(document).ready(function(){
       }
     });
   });
+
+  // // Convertir le mot en inclusive
+  // $('#incluzor_mot_form').on("submit", function () {
+
+  //     // Loading screen
+  //     $("#loading_dial").show();
+  //     $("#resultats").hide();
+  //     $("#resultat_erreurs").hide();
+     
+  //     for (var i = 0; i < 3; i++) {
+  //       $('#resultat_mot_0'+i).hide();
+  //     }
+
+  //     // Le mot a convertir
+  //     var inputText = $("#pass_data").val();
+
+  //     // Faire un appel API
+  //     $.ajax({
+  //         type: "GET",
+  //         url: "http://api.incluzor.fr:5005/mots/inclusive",
+  //         data: {
+  //             masc: inputText,
+  //         },
+  //         success: function(data) {
+  //             // Debug 
+  //             console.log(data);
+
+  //             // Loading finished
+  //             $("#loading_dial").hide();
+
+  //             // Si aucun résultat
+  //             if(data.erreur != null)
+  //             {
+  //                 $("#resultat_erreurs").show();
+  //                 $("#mot_resultat_erreur").text(data.erreur)
+  //             }
+
+  //             // Si on a des resultats, ajouter les resultats au output
+  //             if(data.inclusives != null)
+  //             {
+  //                 for (var i = 0; i < data.inclusives["feminines"].length; i++) {
+                      
+  //                     var fem = data.inclusives["feminines"][i]
+  //                     var fem_sing = fem["singulier"];
+                      
+  //                     var rating = ""
+  //                     for (var j = 0; j < 5; j++) {
+  //                         if (j < fem["rating"] * 5)
+  //                         {
+  //                             rating = rating  + "★"
+  //                         }
+  //                         else
+  //                         {
+  //                             rating = rating  + "☆"
+  //                         }
+  //                     }
+
+  //                     $('#resultat_mot_0'+i).text(fem_sing + " " + rating);
+  //                     $('#resultat_mot_0'+i).show();
+  //                 }
+  //                 $("#resultats_liste").show();
+  //             }
+  //         },
+  //         error: function(xhr, status, err) {
+  //             console.log(xhr);
+  //             $("#loading_dial").hide();
+  //             $("#resultat_erreurs").show();
+  //             $("#mot_resultat_erreur").text(status + " : " + xhr.responseText);
+  //         }
+  //     });
+  //     return false;
+  // });
+
 
   // Convertir le mot en inclusive
   $('#incluzor_mot_form').on("submit", function () {
@@ -46,35 +118,64 @@ $(document).ready(function(){
       // Faire un appel API
       $.ajax({
           type: "GET",
-          url: "http://api.incluzor.fr:5005/mots/inclusive",
+          url: "http://api.incluzor.fr:8000/api/mots/",
           data: {
-              masc: inputText,
+              q: inputText,
           },
           success: function(data) {
-              // Debug 
-              console.log(data);
-
               // Loading finished
               $("#loading_dial").hide();
 
-              // Si aucun résultat
-              if(data.erreur != null)
+              var erreur = data.erreur;
+
+              if (data.results.length > 0){
+                  var mot = data.results[0];
+                  console.log(mot);
+              }
+              else
               {
-                  $("#resultat_erreurs").show();
-                  $("#mot_resultat_erreur").text(data.erreur)
+                  erreur = "Mot pas trouvé.";
               }
 
-              // Si on a des resultats, ajouter les resultats au output
-              if(data.inclusives != null)
+              // Si aucun résultat
+              if(erreur != null)
               {
-                  for (var i = 0; i < data.inclusives["feminines"].length; i++) {
-                      
-                      var fem = data.inclusives["feminines"][i]
+                  $("#resultat_erreurs").show();
+                  $("#mot_resultat_erreur").text(erreur)
+              }
+              if (mot != null)
+              {
+                  // Si on a des resultats, ajouter les resultats au output
+                  // console.log(mot.flexions.map(x => ));
+
+
+                  var mot_fréquence = mot.fréquence.ngrams.singulier;
+                  var total_fréquence_flexions = mot.flexions.reduce(function(prevVal, elem) {
+                      try {
+                        return prevVal + elem.fréquence.ngrams.singulier;
+                      } catch (e) {
+                      }
+                  }, 0);
+
+                  console.log(mot_fréquence);
+                  console.log(total_fréquence_flexions);
+
+                  for (var i = 0; i < mot.flexions.length; i++) {
+
+                      var fem = mot.flexions[i]
                       var fem_sing = fem["singulier"];
-                      
+
+                      // var flex_freq_ratio = fem.fréquence.ngrams.singulier / mot_fréquence;
+                      flex_freq_ratio = 0;
+                      try{
+                        flex_freq_ratio = fem.fréquence.ngrams.singulier / total_fréquence_flexions;
+                      }
+                      catch(e){
+                      }
+
                       var rating = ""
                       for (var j = 0; j < 5; j++) {
-                          if (j < fem["rating"] * 5)
+                          if (j < flex_freq_ratio * 5)
                           {
                               rating = rating  + "★"
                           }
@@ -87,8 +188,8 @@ $(document).ready(function(){
                       $('#resultat_mot_0'+i).text(fem_sing + " " + rating);
                       $('#resultat_mot_0'+i).show();
                   }
-                  $("#resultats_liste").show();
               }
+              $("#resultats_liste").show();
           },
           error: function(xhr, status, err) {
               console.log(xhr);
