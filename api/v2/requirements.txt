@@ -4,7 +4,7 @@ androguard==3.2.1
 ansible==2.7.5
 ansible-lint==3.4.23
 anyconfig==0.9.7
-apache-airflow==1.10.1
+apache-airflow==1.10.6
 arrow==0.12.1
 asn1crypto==0.24.0
 atomicwrites==1.2.1
