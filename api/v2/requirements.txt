@@ -73,7 +73,7 @@ google-auth==1.6.2
 gunicorn==19.3.0
 html5lib==1.0.1
 htmlmin==0.1.12
-httplib2==0.12.0
+httplib2==0.18.0
 idna==2.7
 ijson==2.3
 ipykernel==5.1.0
