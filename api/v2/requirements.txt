@@ -107,7 +107,7 @@ kubernetes==8.0.1
 linecache2==1.0.0
 lml==0.0.7
 lockfile==0.12.2
-lxml==4.2.5
+lxml==4.6.3
 Mako==1.0.7
 Markdown==2.6.11
 MarkupSafe==1.1.0
