@@ -142,7 +142,7 @@ pendulum==1.4.4
 pexpect==4.6.0
 pgadmin4==3.5
 pickleshare==0.7.5
-Pillow==5.4.1
+Pillow==8.3.2
 plac==0.9.6
 plotly==3.6.0
 pluggy==0.8.0
