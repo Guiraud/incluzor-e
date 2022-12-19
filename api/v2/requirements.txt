@@ -140,7 +140,7 @@ pathspec==0.5.9
 pbr==4.1.0
 pendulum==1.4.4
 pexpect==4.6.0
-pgadmin4==3.5
+pgadmin4==6.17
 pickleshare==0.7.5
 Pillow==5.4.1
 plac==0.9.6
